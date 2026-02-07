@@ -47,8 +47,26 @@ During installation:
 
 Do NOT run the script with `sudo`.
 
+## 3. Set a Safe Hardware Volume (Ceiling)
 
-## 3. Enable the DigiAMP+ (I2S Audio HAT)
+Open the ALSA mixer:
+
+    alsamixer
+
+Inside `alsamixer`:
+- Press F6
+- Select `IQaudIODAC`
+- Adjust `Digital` volume to a safe level (e.g. 30–50%)
+
+Exit with `Esc`.
+
+Persist the mixer state:
+
+    sudo alsactl store
+
+This sets a **hardware gain ceiling** to protect speakers and ears.
+
+## 4. Enable the DigiAMP+ (I2S Audio HAT)
 
 Edit firmware configuration:
 
@@ -73,7 +91,7 @@ Expected to see something like:
 Note the **card number** (used in the next step).
 
 
-## 4. Set the DigiAMP+ as the Default ALSA Output
+## 5. Set the DigiAMP+ as the Default ALSA Output
 
 Create or edit `/etc/asound.conf`:
 
@@ -92,24 +110,7 @@ Set defaults to the DigiAMP+ card number
 You should hear a test tone through the speaker.
 
 
-## 5. Set a Safe Hardware Volume (Ceiling)
 
-Open the ALSA mixer:
-
-    alsamixer
-
-Inside `alsamixer`:
-- Press F6
-- Select `IQaudIODAC`
-- Adjust `Digital` volume to a safe level (e.g. 30–50%)
-
-Exit with `Esc`.
-
-Persist the mixer state:
-
-    sudo alsactl store
-
-This sets a **hardware gain ceiling** to protect speakers and ears.
 
 
 ## 6. Enable Bluetooth A2DP Volume Control
