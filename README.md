@@ -22,7 +22,7 @@ The OS must identify as **Raspberry Pi OS**, not just `Debian`.
 
 ### Verify OS after boot
 
-    $ lsb_release -a
+    lsb_release -a
 
 Expected output:
 
@@ -35,9 +35,9 @@ Expected output:
 
 Run from the home directory:
 
-    $ cd ~
-    $ wget https://raw.githubusercontent.com/nicokaiser/rpi-audio-receiver/main/install.sh
-    $ bash install.sh
+    cd ~
+    wget https://raw.githubusercontent.com/nicokaiser/rpi-audio-receiver/main/install.sh
+    bash install.sh
 
 During installation:
 - Bluetooth: YES
@@ -52,7 +52,7 @@ Do NOT run the script with `sudo`.
 
 Edit firmware configuration:
 
-    $ sudo nano /boot/firmware/config.txt
+    sudo nano /boot/firmware/config.txt
 
 Add the following line (do not remove other lines yet):
 
@@ -60,11 +60,11 @@ Add the following line (do not remove other lines yet):
 
 Reboot:
 
-    $ sudo reboot
+    sudo reboot
 
 ### Verify that the HAT is detected
 
-    $ aplay -l
+    aplay -l
 
 Expected to see something like:
 
@@ -77,7 +77,7 @@ Note the **card number** (used in the next step).
 
 Create or edit `/etc/asound.conf`:
 
-    $ sudo nano /etc/asound.conf
+    sudo nano /etc/asound.conf
 
 Set defaults to the DigiAMP+ card number  
 (example assumes the HAT is card 3):
@@ -87,7 +87,7 @@ Set defaults to the DigiAMP+ card number
 
 ### Verify audio output
 
-    $ speaker-test -t sine -f 440 -c 2 -l 1
+    speaker-test -t sine -f 440 -c 2 -l 1
 
 You should hear a test tone through the speaker.
 
@@ -96,7 +96,7 @@ You should hear a test tone through the speaker.
 
 Open the ALSA mixer:
 
-    $ alsamixer
+    alsamixer
 
 Inside `alsamixer`:
 - Press F6
@@ -107,7 +107,7 @@ Exit with `Esc`.
 
 Persist the mixer state:
 
-    $ sudo alsactl store
+    sudo alsactl store
 
 This sets a **hardware gain ceiling** to protect speakers and ears.
 
@@ -116,8 +116,8 @@ This sets a **hardware gain ceiling** to protect speakers and ears.
 
 Create a systemd override for Bluetooth:
 
-    $ sudo mkdir -p /etc/systemd/system/bluetooth.service.d
-    $ sudo nano /etc/systemd/system/bluetooth.service.d/override.conf
+    sudo mkdir -p /etc/systemd/system/bluetooth.service.d
+    sudo nano /etc/systemd/system/bluetooth.service.d/override.conf
 
 Add EXACTLY this:
 
@@ -127,15 +127,15 @@ Add EXACTLY this:
 
 Reload and restart Bluetooth:
 
-    $ sudo systemctl daemon-reload
-    $ sudo systemctl restart bluetooth
+    sudo systemctl daemon-reload
+    sudo systemctl restart bluetooth
 
 
 ## 7. Persist the Bluetooth Device Name
 
 Edit Bluetooth configuration:
 
-    $ sudo nano /etc/bluetooth/main.conf
+    sudo nano /etc/bluetooth/main.conf
 
 Ensure the following exists:
 
@@ -147,7 +147,7 @@ Ensure the following exists:
 
 Restart Bluetooth:
 
-    $ sudo systemctl restart bluetooth
+    sudo systemctl restart bluetooth
 
 
 ## 8. Recover Bluetooth After Restarts (Important)
@@ -156,16 +156,16 @@ After restarting Bluetooth, the controller may be powered off.
 
 If you cannot connect:
 
-    $ bluetoothctl power on
+    bluetoothctl power on
 
 If needed:
 
-    $ bluetoothctl pairable on
-    $ bluetoothctl discoverable on
+    bluetoothctl pairable on
+    bluetoothctl discoverable on
 
 Verify state:
 
-    $ bluetoothctl show
+    bluetoothctl show
 
 Expected:
 
