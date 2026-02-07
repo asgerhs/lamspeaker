@@ -173,8 +173,21 @@ Expected:
     Name: lamspeaker
     Alias: lamspeaker
 
+## 9. Bluetooth auto-recovery
 
-## 9. Resulting Setup (Baseline)
+After enabling Bluetooth A2DP and volume control, the Bluetooth controller
+may start in a powered-off state after reboot.
+
+To ensure Bluetooth is always powered on automatically, a custom systemd
+service is installed as part of this setup.
+
+See [services/README.md](../services/README.md) for full details and how to implement
+
+Required step:
+- Install and enable `bt-poweron.service`
+
+
+## 10. Resulting Setup (Baseline)
 
 At this point you have:
 - DigiAMP+ working over I2S
@@ -192,6 +205,8 @@ At this point you have:
 - No read-only filesystem
 
 These are future steps built on top of this baseline.
+
+
 
 
 ## Recovery Notes
