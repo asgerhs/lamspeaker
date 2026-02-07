@@ -62,6 +62,8 @@ Persist the mixer state:
 
 This sets a **hardware gain ceiling** to protect speakers and ears.
 
+Change this later to around 80 when you've tested everything works. 
+
 ## 4. Enable the DigiAMP+ (I2S Audio HAT)
 
 Edit firmware configuration:
