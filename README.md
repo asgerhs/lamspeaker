@@ -7,7 +7,7 @@ All software documentation for the lamspeaker project.
 
 For setting up the Raspberry Pi 4B with a clean SD drive, please see: 
 
-[Initial setup](initialSetup/README.md)
+[Initial setup](InitialSetup//README.md)
 
 
 ## Services 
