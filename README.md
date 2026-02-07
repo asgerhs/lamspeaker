@@ -12,13 +12,9 @@ power management, or read-only filesystems.
 ## 1. Install the Operating System
 
 ### Requirements
-- Raspberry Pi OS (Legacy) Lite
+- Raspberry Pi OS 12 (Legacy) Lite
 - Debian 12 (Bookworm)
 - 32-bit or 64-bit (64-bit used here)
-
-IMPORTANT:
-Do NOT use plain Debian.
-The OS must identify as **Raspberry Pi OS**, not just `Debian`.
 
 ### Verify OS after boot
 
@@ -26,7 +22,7 @@ The OS must identify as **Raspberry Pi OS**, not just `Debian`.
 
 Expected output:
 
-    Distributor ID: RaspberryPi
+    Distributor ID: RaspberryPi/Debian
     Release:        12
     Codename:       bookworm
 
