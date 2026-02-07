@@ -29,7 +29,7 @@ especially when using USB Bluetooth dongles.
 This service runs once at boot and safely powers the controller on.
 
 ### How to inspect
-systemctl status bt-poweron.service
+    systemctl status bt-poweron.service
 
 ### How to disable
-sudo systemctl disable bt-poweron.service
+    sudo systemctl disable bt-poweron.service
