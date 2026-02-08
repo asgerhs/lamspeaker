@@ -15,3 +15,10 @@ For setting up the Raspberry Pi 4B with a clean SD drive, please see:
 After doing initial setup, next step would be adding services. To see all of our services, their purpose and so on, please see: 
 
 [Services](services/README.md)
+
+
+## Advanced setup
+
+After initial setup, making the speaker more robust and ready for an outdoor setting. 
+
+[Advanced setup](advancedSetup/README.md)
