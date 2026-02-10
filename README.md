@@ -22,3 +22,10 @@ After doing initial setup, next step would be adding services. To see all of our
 After initial setup, making the speaker more robust and ready for an outdoor setting. 
 
 [Advanced setup](advancedSetup/README.md)
+
+
+## Logs
+
+For relevant system logs and custom logs, please see: 
+
+[Logs](Logs/README.md)

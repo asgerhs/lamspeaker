@@ -52,8 +52,7 @@ This service runs once at boot and safely powers the controller on.
 
 ### Purpose
 Since we allow multiple connections at once, we want to prevent untrusted people to connect. 
-Additionally we currently also hide the speaker, so it's not visible to others while in use who aren't already trusted parties. 
-Although we only allow one source for sound at a time, we don't want to block the speaker because someone is connected but not playing any sound. 
+Additionally we also hide the speaker, so it's not visible to others while in use who aren't already trusted parties. Although we only allow one source for sound at a time, we don't want to block the speaker because someone is connected but not playing any sound. 
 
 ### location 
 
@@ -172,3 +171,18 @@ Enable and start the service:
     sudo systemctl enable bt-discoverable-guard.service
     sudo systemctl start bt-discoverable-guard.service
 
+
+### 3. Verify
+
+Check service status:
+
+    systemctl status bt-discoverable-guard.service
+
+Check current Bluetooth state:
+
+    bluetoothctl show
+
+Expected behavior:
+
+- No device connected → Discoverable: yes, Pairable: yes
+- Device connected → Discoverable: no, Pairable: no
