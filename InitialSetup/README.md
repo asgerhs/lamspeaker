@@ -181,7 +181,7 @@ may start in a powered-off state after reboot.
 To ensure Bluetooth is always powered on automatically, a custom systemd
 service is installed as part of this setup.
 
-See [services/README.md](../services/README.md) for full details and how to implement
+See [services/README.md](../services/README.md#bluetooth-power-on-service) for full details and how to implement
 
 Required step:
 - Install and enable `bt-poweron.service`
