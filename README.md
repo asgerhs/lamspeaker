@@ -29,3 +29,10 @@ After initial setup, making the speaker more robust and ready for an outdoor set
 For relevant system logs and custom logs, please see: 
 
 [Logs](Logs/README.md)
+
+
+## Backups
+
+To see how we create snapshots of the SD card, please see: 
+
+[Backups](backupProcess/README.md)
